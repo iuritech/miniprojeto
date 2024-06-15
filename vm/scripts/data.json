@@ -1,0 +1,33 @@
+[
+     {
+    "id": "1",
+    "artigos": "Maquinas",
+    "description": "Description for Item 1"
+  },
+  {
+    "id": "2",
+    "artigos": "Interiores",
+    "description": "Description for Item 2"
+  },
+  {
+    "id": "3",
+    "artigos": "Acessorios",
+    "description": "Description for Item 1"
+  },
+  {
+    "id": "4",
+    "artigos": "teste1",
+    "description": "Description for Item 2"
+  },
+  {
+    "id": "5",
+    "artigos": "teste2",
+    "description": "Description for Item 1"
+  },
+  {
+    "id": "6",
+    "artigos": "teste3",
+    "description": "Description for Item 2"
+  }
+]
+

@@ -1,0 +1,105 @@
+#cloud-config
+package_update: true
+package_upgrade: true
+
+packages:
+  - python3-pip
+
+write_files:
+#   # Example file 1
+  - path: /home/tony/app/.env
+    permissions: '0644'
+    content: |
+      COSMOS_KEY="vTQN17oM2llxX9DO3zCVkHeOIJxjL8npX6x9LZAXvCp2Xnc5HJes4lJCZ3ZCjkEf3amu5PrOokkHACDbN1TwkA=="
+      COSMOS_ENDPOINT="https://simoes.documents.azure.com:443/"
+    # Example file 3
+  - path: /home/tony/app/data.json
+    permissions: '0644'
+    content: |
+      [
+        {
+          "id": "1",
+          "artigos": "Maquinas",
+          "description": "Description for Item 1"
+        },
+        {
+          "id": "2",
+          "artigos": "Interiores",
+          "description": "Description for Item 2"
+        },
+        {
+          "id": "3",
+          "artigos": "Acessorios",
+          "description": "Description for Item 1"
+        },
+        {
+          "id": "4",
+          "artigos": "teste1",
+          "description": "Description for Item 2"
+        },
+        {
+          "id": "5",
+          "artigos": "teste2",
+          "description": "Description for Item 1"
+        },
+        {
+          "id": "6",
+          "artigos": "teste3",
+          "description": "Description for Item 2"
+        }
+      ]
+# Example file 2
+  - path: /home/tony/app/script.py
+    content: |
+      import os
+      import json
+      from azure.cosmos import exceptions, CosmosClient, PartitionKey
+
+      # Load environment variables from .env file
+      from dotenv import load_dotenv
+      load_dotenv()
+
+      # Provide required connection details from environment variables
+      endpoint = os.getenv('COSMOS_ENDPOINT')
+      key = os.getenv('COSMOS_KEY')
+
+      if not endpoint or not key:
+          raise ValueError("Cosmos DB endpoint and key must be provided in environment variables")
+
+      # Initialize the Cosmos client
+      client = CosmosClient(endpoint, key)
+
+      # Define the database and container
+      database_name = 'tonytectosDB'
+      container_name = 'tonytectosContainer'
+
+      # Create a database if it doesn't already exist
+      database = client.create_database_if_not_exists(id=database_name)
+
+      # Create a container if it doesn't already exist
+      container = database.create_container_if_not_exists(
+          id=container_name,
+          partition_key=PartitionKey(path="/id"),
+          offer_throughput=400
+      )
+
+      # Load data from the JSON file
+      json_file_path = '/home/tony/app/data.json'  # Update this with your JSON file path
+
+      with open(json_file_path, 'r') as file:
+          data = json.load(file)
+
+      # Upload data to Cosmos DB
+      for item in data:
+          try:
+              container.create_item(body=item)
+              print(f"Inserted item with id: {item['id']}")
+          except exceptions.CosmosResourceExistsError:
+              print(f"Item with id: {item['id']} already exists")
+
+      print("Data upload complete.")
+            
+runcmd:
+  - pip3 install azure-cosmos python-dotenv
+  - chown -R tony:tony /home/tony
+  - python3 /home/tony/app/script.py
