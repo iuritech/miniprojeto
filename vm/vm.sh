@@ -3,8 +3,8 @@ VM_NAME="tonyVM"
 USERNAME="tony"
 PASSWORD="!Tonytectos!"
 
-az vm delete --id /subscriptions/0f4dc1b5-0409-47fb-845c-5de7c20a4a4b/resourceGroups/TP/providers/Microsoft.Compute/virtualMachines/tonyVM
-ssh-keygen -f "/home/simoes/.ssh/known_hosts" -R "4.211.169.200"
+# az vm delete --id /subscriptions/0f4dc1b5-0409-47fb-845c-5de7c20a4a4b/resourceGroups/TP/providers/Microsoft.Compute/virtualMachines/tonyVM
+# ssh-keygen -f "/home/simoes/.ssh/known_hosts" -R "4.211.169.200"
 
 az vm create \
   --resource-group $RESOURCE_GROUP \

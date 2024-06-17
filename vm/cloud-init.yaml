@@ -103,3 +103,6 @@ runcmd:
   - pip3 install azure-cosmos python-dotenv
   - chown -R tony:tony /home/tony
   - python3 /home/tony/app/script.py
+
+
+
