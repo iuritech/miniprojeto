@@ -10,7 +10,7 @@ write_files:
   - path: /home/tony/app/.env
     permissions: '0644'
     content: |
-      COSMOS_KEY="vTQN17oM2llxX9DO3zCVkHeOIJxjL8npX6x9LZAXvCp2Xnc5HJes4lJCZ3ZCjkEf3amu5PrOokkHACDbN1TwkA=="
+      COSMOS_KEY="pKOo3ZCgJGWXiDjdoVfYFpEHTmYUzehDIWObV30vuvKd5YgdOgsmoFD0pWNY2hRtPb7epcgFIy8JACDb3jIYzA=="
       COSMOS_ENDPOINT="https://simoes.documents.azure.com:443/"
     # Example file 3
   - path: /home/tony/app/data.json

@@ -36,4 +36,7 @@ az cosmosdb sql database create --account-name $accountName --resource-group $re
 # Create a container
 az cosmosdb sql container create --account-name $accountName --resource-group $resourceGroupName --database-name $databaseName --name $containerName --partition-key-path $partitionKeyPath
 
+echo "cosmos key"
 az cosmosdb keys list -n simoes -g tp | grep primaryM
+echo storage key
+az storage account keys list -g tp -n simoesstorage | grep value
