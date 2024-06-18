@@ -27,7 +27,7 @@ Para o caso de perder as keys apresentadas no terminal
 
     webapp/.env 
 
-3.3: no site da azure no recurso webapp tonytectos settings, (x)environment variables, add, adicionar as duas variaveis com os mesmos nomes que NÃO ESQUECER CLICAR APLY NOS 2 BOTOES 
+3.3: no site da azure no recurso webapp tonytectos settings, (x)environment variables, add, adicionar as duas variaveis com os mesmos nomes que estão no ficheiro .env. NÃO ESQUECER CLICAR APLY NOS 2 BOTOES 
 
     cat webapp/.env 
 
