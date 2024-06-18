@@ -36,7 +36,7 @@ Para o caso de perder as keys apresentadas no terminal
     function/upload.js 
 
 
-5: automaticamente adiciona os artigos na bd se nao funcionar conectar com a vm por ssh (ssh <ip> -l tony) (password: !Tonytectos!) e correr (cd app), (python3 script.py) 
+5: automaticamente adiciona os artigos na bd se nao funcionar conectar com a vm por ssh (ssh ip -l tony) (password: !Tonytectos!) e correr (cd app), (python3 script.py) 
 
     cd vm 
     bash vm.sh
