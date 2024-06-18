@@ -31,7 +31,7 @@ Para o caso de perder as keys apresentadas no terminal
 
     cat webapp/.env 
 
-4:   atualizar storage key na linha-7 AccountKey=<alterar>;
+4:   atualizar storage key na linha-7 AccountKey=alterar;
 
     function/upload.js 
 
