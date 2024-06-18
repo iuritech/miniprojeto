@@ -4,7 +4,7 @@ const path = require('path');
 const Jimp = require('jimp');
 
 // Azure Storage account connection string
-const AZURE_STORAGE_CONNECTION_STRING = 'DefaultEndpointsProtocol=https;AccountName=simoesstorage;AccountKey=G/nBkvimIeDH7RTS0l9wh3oz1ylk8xsH6SDEvoL9l53oWlDUkPfJUj9lW+tcr8JF42Wna/GtIT4d+AStvEzTTA==;EndpointSuffix=core.windows.net';
+const AZURE_STORAGE_CONNECTION_STRING = 'DefaultEndpointsProtocol=https;AccountName=simoesstorage;AccountKey=LaMCRT6Lw+1iKF03oksG0+jkB5FzTaKBv19HW7Y2u1XAlB3fisVhADDr7OY+legWxmWNa5Erf6lt+ASt+12+pg==;EndpointSuffix=core.windows.net';
 
 // Initialize the BlobServiceClient
 const blobServiceClient = BlobServiceClient.fromConnectionString(AZURE_STORAGE_CONNECTION_STRING);
