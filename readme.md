@@ -19,7 +19,7 @@ Para o caso de perder as keys apresentadas no terminal
 
 3:   atualizar cosmos key em: 
 
-3.1:  <!-- linha-13 -->
+3.1: linha-13 
 
     vm/cloud-init.yaml 
 
